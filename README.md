@@ -1,1 +1,403 @@
 # HACKED.github.io
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EthicalHackRepo - Recursos de Seguridad Ética</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            color: #1a202c;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2d3748;
+            color: white;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        nav a {
+            color: #2b6cb0;
+            text-decoration: none;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .aviso-legal {
+            background-color: #fc8181;
+            color: white;
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .card h3 {
+            color: #2b6cb0;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #2b6cb0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        section h2 {
+            color: #2b6cb0;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        section h3 {
+            color: #4a5568;
+            margin: 1.2rem 0 0.8rem;
+        }
+
+        section p, section li {
+            margin-bottom: 1rem;
+        }
+
+        section ul {
+            padding-left: 1.5rem;
+        }
+
+        .repo-item {
+            border-left: 3px solid #2b6cb0;
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .repo-item a {
+            color: #2b6cb0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .repo-item a:hover {
+            text-decoration: underline;
+        }
+
+        .formulario-autorizacion {
+            background-color: #e6f7ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .formulario-autorizacion h3 {
+            color: #1890ff;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .formulario-autorizacion button {
+            padding: 0.8rem 1.5rem;
+            background-color: #2b6cb0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            display: block;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: #2d3748;
+            color: white;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #91d5ff;
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+
+        footer p {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 200;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        .close {
+            color: #666;
+            float: right;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>EthicalHackRepo</h1>
+        <p>Repositorios de Herramientas para Seguridad Ética y Pentesting Autorizado</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#herramientas">Herramientas</a></li>
+            <li><a href="#guias">Guías Éticas</a></li>
+            <li><a href="#certificaciones">Certificaciones</a></li>
+            <li><a href="#recursos">Recursos Oficiales</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" id="inicio">
+        <div class="aviso-legal">
+            ⚠️ IMPORTANTE: TODAS LAS HERRAMIENTAS Y RECURSOS DE ESTE SITIO DEBEN USARSE SOLO EN SISTEMAS DONDE CUENTES CON AUTORIZACIÓN EXPRESA DEL PROPIETARIO. EL USO NO AUTORIZADO ES ILEGAL EN MÉXICO Y PUEDE TRAER SANCIONES PENALES.
+        </div>
+
+        <section>
+            <h2>¿Qué es el Hacking Ético?</h2>
+            <p>El hacking ético (o pentesting) es la práctica autorizada de identificar vulnerabilidades en sistemas informáticos, redes o aplicaciones para ayudar a los propietarios a mejorar su seguridad.</p>
+            <p>Los profesionales en esta área trabajan en colaboración con empresas y organizaciones para prevenir ataques maliciosos y proteger datos sensibles.</p>
+
+            <div class="formulario-autorizacion">
+                <h3>Antes de Acceder a los Repositorios</h3>
+                <p>Confirma que entiendes la importancia de usar estas herramientas de manera ética y legal.</p>
+                <button onclick="abrirModal()">Confirmar Entendimiento</button>
+            </div>
+        </section>
+
+        <div class="cards-grid">
+            <div class="card">
+                <h3>Herramientas de Escaneo</h3>
+                <p>Repositorios con herramientas para detectar vulnerabilidades en redes y sistemas.</p>
+                <a href="#herramientas">Ver más →</a>
+            </div>
+
+            <div class="card">
+                <h3>Guías Éticas</h3>
+                <p>Pasos para realizar pruebas de seguridad de manera autorizada y cumplir con la ley.</p>
+                <a href="#guias">Ver más →</a>
+            </div>
+
+            <div class="card">
+                <h3>Certificaciones</h3>
+                <p>Programas reconocidos para capacitarte como profesional en seguridad ética.</p>
+                <a href="#certificaciones">Ver más →</a>
+            </div>
+
+            <div class="card">
+                <h3>Recursos Oficiales</h3>
+                <p>Enlaces a instituciones mexicanas y globales de ciberseguridad.</p>
+                <a href="#recursos">Ver más →</a>
+            </div>
+        </div>
+
+        <section id="herramientas">
+            <h2>Repositorios de Herramientas Éticas</h2>
+            <p>Todas estas herramientas están disponibles en plataformas como GitHub, con licencias que permiten su uso ético:</p>
+
+            <div class="repo-item">
+                <h3>Nmap</h3>
+                <p>Herramienta de escaneo de redes para identificar dispositivos y puertos abiertos.</p>
+                <a href="https://github.com/nmap/nmap" target="_blank">Ver repositorio en GitHub →</a>
+            </div>
+
+            <div class="repo-item">
+                <h3>Metasploit Framework</h3>
+                <p>Plataforma para probar vulnerabilidades de manera controlada y autorizada.</p>
+                <a href="https://github.com/rapid7/metasploit-framework" target="_blank">Ver repositorio en GitHub →</a>
+            </div>
+
+            <div class="repo-item">
+                <h3>Wireshark</h3>
+                <p>Analizador de tráfico de red para diagnosticar problemas y verificar seguridad.</p>
+                <a href="https://github.com/wireshark/wireshark" target="_blank">Ver repositorio en GitHub →</a>
+            </div>
+
+            <div class="repo-item">
+                <h3>Burp Suite Community Edition</h3>
+                <p>Herramienta para probar la seguridad de aplicaciones web (versión gratuita).</p>
+                <a href="https://portswigger.net/burp/communitydownload" target="_blank">Descargar desde sitio oficial →</a>
+            </div>
+        </section>
+
+        <section id="guias">
+            <h2>Guías de Pruebas Éticas</h2>
+            <ul>
+                <li><strong>Guía de Pentesting de la OWASP</strong>: Estándares internacionales para pruebas de aplicaciones web. <a href="https://owasp.org/www-project-web-security-testing-guide/" target="_blank">Ver guía →</a></li>
+                <li><strong>Normas de Seguridad de México (CNC)</strong>: Lineamientos para proteger sistemas en instituciones mexicanas. <a href="https://www.cnc.gob.mx/lineamientos" target="_blank">Ver lineamientos →</a></li>
+                <li><strong>Guía de Uso Ético</strong>: Pasos para solicitar autorización y documentar pruebas de seguridad. <a href="#">Descargar guía (PDF) →</a></li>
+            </ul>
+        </section>
+
+        <section id="certificaciones">
+            <h2>Certificaciones Reconocidas</h2>
+            <ul>
+                <li><strong>CEH (Certified Ethical Hacker)</strong>: Certificación global para profesionales de hacking ético.</li>
+                <li><strong>OSCP (Offensive Security Certified Professional)</strong>: Enfocada en prácticas prácticas de pentesting.</li>
+                <li><strong>Certificación en Ciberseguridad del CNC</strong>: Programa oficial mexicano para especialistas.</li>
+            </ul>
+        </section>
+
+        <section id="recursos">
+            <h2>Recursos Oficiales</h2>
+            <ul>
+                <li><a href="https://www.cnc.gob.mx" target="_blank">Centro Nacional de Ciberseguridad (México)</a></li>
+                <li><a href="https://owasp.org" target="_blank">OWASP (Open Web Application Security Project)</a></li>
+                <li><a href="https://www.inai.org.mx" target="_blank">INAI (Protección de Datos Personales - México)</a></li>
+                <li><a href="https://www.isc2.org" target="_blank">ISC² (Organización Global de Seguridad Cibernética)</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div id="modalConfirmacion" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h3>CONFIRMACIÓN ÉTICA Y LEGAL</h3>
+            <p>Yo confirmo que entenderé usar todos los recursos de este sitio SOLO en sistemas donde cuente con autorización escrita del propietario, y que cumpliré con las leyes mexicanas y internacionales de ciberseguridad.</p>
+            <button onclick="aceptarConfirmacion()">Acepto y Entiendo</button>
+        </div>
+    </div>
+
+    <footer>
+        <div>
+            <a href="#inicio">Inicio</a>
+            <a href="#herramientas">Herramientas</a>
+            <a href="#guias">Guías Éticas</a>
+            <a href="#certificaciones">Certificaciones</a>
+            <a href="#recursos">Recursos Oficiales</a>
+        </div>
+        <p>&copy; 2026 EthicalHackRepo - Solo para uso ético y autorizado. Ley Federal de Protección de Datos y CNC México.</p>
+    </footer>
+
+    <script>
+        // Modal de confirmación
+        const modal = document.getElementById('modalConfirmacion');
+
+        function abrirModal() {
+            modal.style.display = "block";
+        }
+
+        function cerrarModal() {
+            modal.style.display = "none";
+        }
+
+        function aceptarConfirmacion() {
+            modal.style.display = "none";
+            alert("¡Gracias por tu compromiso ético! Ahora puedes explorar todos los recursos del sitio.");
+        }
+
+        // Cerrar modal al hacer clic fuera
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Scroll suave
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+           
